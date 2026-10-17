@@ -5,7 +5,7 @@ public class DynamicArray {
 
 
     int size;
-    int capacity = 10;
+    int capacity = 5;
     Object[] array;
 
     public DynamicArray() {
@@ -48,21 +48,41 @@ public class DynamicArray {
                 }
                 array[size - 1] = null;
                 size--;
+                if(size <= (capacity/3)) {
+                    shrink();
+                }
+                break;
             }
         }
     }
 
 
     public int search(Object data) {
+        for (int i = 0; i < size; i++) {
+            if(array[i] == data) return i;
+        }
         return -1;
     }
 
     private void grow() {
-
+        int newCapacity = capacity * 2;
+        Object[] newArray = new Object[newCapacity];
+        for (int i = 0; i < size; i++) {
+            newArray[i] = array[i];
+        }
+        capacity = newCapacity;
+        array = newArray;
     }
 
     private void shrink() {
 
+        int newCapacity = capacity / 2;
+        Object[] newArray = new Object[newCapacity];
+        for (int i = 0; i < size; i++) {
+            newArray[i] = array[i];
+        }
+        capacity = newCapacity;
+        array = newArray;
     }
 
     public boolean isEmpty() {

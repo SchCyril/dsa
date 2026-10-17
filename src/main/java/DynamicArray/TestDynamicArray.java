@@ -9,6 +9,10 @@ public class TestDynamicArray {
         dynamicArray.add("B");
         dynamicArray.add("C");
         dynamicArray.add("D");
+        dynamicArray.add("E");
+        dynamicArray.add("F");
+
+
 
         System.out.println(dynamicArray);
         System.out.println("Size: " + dynamicArray.size);
@@ -16,14 +20,16 @@ public class TestDynamicArray {
         System.out.println("Empty: " + dynamicArray.isEmpty());
 
         System.out.println("------------------------------------");
-        dynamicArray.insert(1, "Z");
+        dynamicArray.delete("E");
+        dynamicArray.delete("F");
+        dynamicArray.delete("C");
 
 
         System.out.println(dynamicArray);
         System.out.println("Size: " + dynamicArray.size);
         System.out.println("Capacity: " + dynamicArray.capacity);
         System.out.println("Empty: " + dynamicArray.isEmpty());
-
+/*
         System.out.println("------------------------------------");
         dynamicArray.delete("Z");
 
@@ -32,6 +38,11 @@ public class TestDynamicArray {
         System.out.println("Size: " + dynamicArray.size);
         System.out.println("Capacity: " + dynamicArray.capacity);
         System.out.println("Empty: " + dynamicArray.isEmpty());
+
+        System.out.println("-----------------------------------");
+
+        System.out.println(dynamicArray.search("C"));
+*/
 
 
     }
